@@ -1,7 +1,7 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:           supybot-notify
-Version:        0.1
+Version:        0.2
 Release:        1%{?dist}
 Summary:        Notification plugin for Supybot
 
@@ -45,5 +45,8 @@ an IRC channel.
 
 
 %changelog
+* Mon Nov 01 2010 Ricky Zhou <ricky@fedoraproject.org> - 0.2-1
+- Update for 0.2 release.
+
 * Mon Mar 16 2009 Ricky Zhou <ricky@fedoraproject.org> - 0.1-1
 - Initial RPM package.

@@ -41,7 +41,7 @@ import select
 class NotifyServerHandler(SocketServer.StreamRequestHandler):
     def handle(self):
         try:
-            while 1:
+            while True:
                 line = self.rfile.readline()
                 if not line:
                     break
