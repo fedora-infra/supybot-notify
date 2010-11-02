@@ -1,4 +1,6 @@
-%{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
+%if ! (0%{?fedora} > 12 || 0%{?rhel} > 5)
+%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
+%endif
 
 Name:           supybot-notify
 Version:        0.2
@@ -14,7 +16,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:       supybot
 
 BuildArch:      noarch
-BuildRequires:  python-devel
+BuildRequires:  python2-devel
 
 %description
 A Supybot plugin which relays messages from a TCP server to
