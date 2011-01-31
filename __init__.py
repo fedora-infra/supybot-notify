@@ -1,5 +1,5 @@
 ###
-# Copyright (c) 2010, Ricky Zhou
+# Copyright (c) 2010, Ricky Zhou, Tim Bielawa
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -28,8 +28,7 @@
 ###
 
 """
-Add a description of the plugin (to be presented to the user inside the wizard)
-here.  This should describe *what* the plugin does.
+Notify listenes to a port on its host for messages to post to channels.
 """
 
 import supybot
@@ -44,7 +43,9 @@ __author__ = supybot.Author('Ricky Zhou', 'ricky', 'ricky@fedoraproject.org')
 
 # This is a dictionary mapping supybot.Author instances to lists of
 # contributions.
-__contributors__ = {}
+__contributors__ = {supybot.Author('Tim Bielawa', 'tbielawa', 'timbielawa@gmail.com'):
+                        ['Updates by email script',
+                         'Fix NotifyServerHandler not finding registryValue method']}
 
 # This is a url where the most recent plugin package can be downloaded.
 __url__ = 'https://fedorahosted.org/released/supybot-notify/'
