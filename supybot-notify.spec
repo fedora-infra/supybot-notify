@@ -33,7 +33,7 @@ an IRC channel.
 %install
 %{__rm} -rf %{buildroot}
 %{__install} -dm 755 %{buildroot}/%{python_sitelib}/supybot/plugins/Notify
-%{__install} -pm 644 *.py %{buildroot}/%{python_sitelib}/supybot/plugins/Notify
+%{__install} -pm 644 supybot_notify/*.py %{buildroot}/%{python_sitelib}/supybot/plugins/Notify
 
 
 %clean
