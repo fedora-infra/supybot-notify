@@ -42,7 +42,7 @@ class NotifyServerHandler(socketserver.StreamRequestHandler):
     def handle(self):
         try:
             while True:
-                line = self.rfile.readline()
+                line = str(self.rfile.readline(), 'utf-8')
                 if not line:
                     break
                 line = line.strip()
