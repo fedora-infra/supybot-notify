@@ -1,7 +1,3 @@
-%if ! (0%{?fedora} > 12 || 0%{?rhel} > 5)
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-%endif
-
 Name:           supybot-notify
 Version:        0.2.1
 Release:        1%{?dist}
@@ -16,7 +12,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:       supybot
 
 BuildArch:      noarch
-BuildRequires:  python2-devel
+BuildRequires:  python3-devel
 
 %description
 A Supybot plugin which relays messages from a TCP server to
@@ -43,7 +39,7 @@ an IRC channel.
 %files
 %defattr(-,root,root,-)
 %doc README COPYING
-%{python_sitelib}/supybot/plugins/Notify
+%{python3_sitelib}/supybot/plugins/Notify
 
 
 %changelog

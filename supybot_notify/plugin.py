@@ -35,10 +35,10 @@ import supybot.callbacks as callbacks
 import supybot.world as world
 import supybot.ircmsgs as ircmsgs
 import threading
-import SocketServer
+import socketserver
 import select
 
-class NotifyServerHandler(SocketServer.StreamRequestHandler):
+class NotifyServerHandler(socketserver.StreamRequestHandler):
     def handle(self):
         try:
             while True:
@@ -61,12 +61,12 @@ class NotifyServerHandler(SocketServer.StreamRequestHandler):
             """In the future there should be specific exception
             handlers here. Until then we'll just print out the base
             one."""
-            print e
+            print(e)
 
-class StoppableThreadingTCPServer(SocketServer.ThreadingTCPServer):
+class StoppableThreadingTCPServer(socketserver.ThreadingTCPServer):
     '''ThreadingTCPServer with shutdown capability copied from Python SVN'''
     def __init__(self, server_address, RequestHandlerClass):
-        SocketServer.ThreadingTCPServer.__init__(self, server_address, RequestHandlerClass)
+        socketserver.ThreadingTCPServer.__init__(self, server_address, RequestHandlerClass)
         self.__is_shut_down = threading.Event()
         self.__serving = False
 
