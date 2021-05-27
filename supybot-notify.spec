@@ -5,9 +5,8 @@ Summary:        Notification plugin for Supybot
 
 Group:          Applications/Internet
 License:        BSD
-URL:            http://git.fedorahosted.org/git/supybot-notify.git
-Source0:        https://fedorahosted.org/released/supybot-notify/%{name}-%{version}.tar.xz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+URL:            https://github.com/fedora-infra/supybot-notify
+Source0:        https://github.com/fedora-infra/%{name}/archive/%{version}/%{name}-%{version}.tar.gz 
 
 Requires:       supybot
 
@@ -27,13 +26,13 @@ an IRC channel.
 
 
 %install
-%{__rm} -rf %{buildroot}
-%{__install} -dm 755 %{buildroot}/%{python_sitelib}/supybot/plugins/Notify
-%{__install} -pm 644 supybot_notify/*.py %{buildroot}/%{python_sitelib}/supybot/plugins/Notify
+%{__rm} -rf $RPM_BUILD_ROOT
+%{__install} -dm 755 $RPM_BUILD_ROOT/%{python3_sitelib}/supybot/plugins/Notify
+%{__install} -pm 644 supybot_notify/*.py $RPM_BUILD_ROOT/%{python3_sitelib}/supybot/plugins/Notify
 
 
 %clean
-%{__rm} -rf %{buildroot}
+%{__rm} -rf $RPM_BUILD_ROOT
 
 
 %files
