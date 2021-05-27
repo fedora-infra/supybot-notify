@@ -1,5 +1,5 @@
 Name:           supybot-notify
-Version:        0.2.1
+Version:        0.3
 Release:        1%{?dist}
 Summary:        Notification plugin for Supybot
 
@@ -8,7 +8,7 @@ License:        BSD
 URL:            https://github.com/fedora-infra/supybot-notify
 Source0:        https://github.com/fedora-infra/%{name}/archive/%{version}/%{name}-%{version}.tar.gz 
 
-Requires:       supybot
+Requires:       limnoria
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
@@ -42,6 +42,10 @@ an IRC channel.
 
 
 %changelog
+* Thu May 27 2021 Ryan Lerch <rlerch@redhat.com> - 0.3-1
+- Update for 0.3 release.
+- Python 3 Conversion
+
 * Fri Jan 07 2011 Ricky Zhou <ricky@fedoraproject.org> - 0.2.1-1
 - Update for 0.2.1 release.
 
